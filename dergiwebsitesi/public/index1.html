@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEZUL</title>
+    <link rel="icon" type="image/jpg" href="../yeni web ödevi/images/dergiicon1.webp">
+    <!-- bootsrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <!-- css  ekleme -->
+    <link rel="stylesheet" href ="style.css">
+    <!--owl ekleme-->
+    <link rel="stylesheet" href="js/owl/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="js/owl/dist/assets/owl.theme.default.min.css">
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+
+<!-- popup ve üyelik formu başlangıç -->
+
+<section id="popup" class="contact" >
+    
+
+    <h1 class="heading">üyelik formu</h1>
+
+    <form method="post" action="/signup" onsubmit="return validateRegistrationForm()" enctype="multipart/form-data">
+
+        <span>Adınız ve Soyadınız:</span>
+        <input type="text" name="name" placeholder="Adınızı ve Soyadınızı Girin" class="box">
+        <span>E-mail adresiniz:</span>
+        <input type="email" name="email" placeholder="E-mail Adresinizi Girin" class="box">
+        <span>Şifre:</span>
+        <input type="password" name="password" placeholder="Şifrenizi Girin" class="box">
+        <span>Şifre onaylama:</span>
+        <input type="password" name="confirmPassword" placeholder="Şifrenizi Tekrar Girin" class="box">
+       
+        <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+        <div id="successMessage" class="alert alert-success" style="display: none;"></div>
+        
+        <button  onclick="refreshUserList('${user._id}')" class="btn btn-primary btn-lg" >Kaydet</button>
+        <button type="button" onclick="hidePopup()" class="btn btn-danger btn-lg">Kapat</button>
+
+    </form>
+</section>
+
+<!-- pop up ve üyelik formu bitiş -->
+
+
+<!-- header başlangıç-->
+<header class="header fixed-top">
+
+    <div  class="container">
+        
+        <div class="row align-items-center justify-content-between">
+
+            <a href="#home" class="logo"> SEZUL<span>DERGİ</span>  </a>
+            <nav class="nav">
+                <a href="#duyuru">Duyuru</a>
+                <a href="#about">Hakkımızda</a>
+                <a href="#sonsayi">Son Sayılar</a>
+                <a href="#yazar">Yazarlar</a>
+                <a href="#etik">Etik</a>
+                <a href="#uye" onclick="showuye()">Uye</a>
+                <a href="makaleler.html">Makaleler</a>
+            </nav>
+           
+            <a href="#contact" class="link-btn" onclick="showPopup()">Üyelik İçin Tıklayınız</a>
+         
+        </div>
+
+    </div>
+
+</header>
+<!--header son-->
+
+<!--home başlangıç-->
+<section class="home" id="home">
+
+    <div class="container">
+
+        <div class="row min-vh-100 align-items-center">
+            <div class="content text-center text-md-left">
+                
+            <h3><b>EDEBİYATIN DERİNLİKLERİNE ÜCRETSİZ BİR YOLCULUK</b></h3>
+           <p><b>SEZUL DİL VE EĞİTİM DERGİSİ, dil ve edebiyatın büyüleyici dünyasını keşfetmek isteyenler için bir online merkezdir. Sitemizde dilin gücü ve edebiyatın derinlikleri arasında bir yolculuğa çıkmaya davetlisiniz. </b></p>
+
+          
+           <a href="#makaleForm" class="link-btn" onclick="showmakale()">Makale Yayınla</a>
+            </div>
+        </div> 
+    </div>
+
+</section>
+
+<!--home son-->
+
+
+<!--slider başlangıç-->
+
+<section class="slider" id="duyuru">
+
+    <div class="container">
+        <div class="owl-carousel owl-theme">
+
+            <div class="item">
+                <div class="banner-item">
+                    <div class="caption">
+                        <span>Sevgili okurlarımız, yeni cildimiz 28 Kasım İtibarıyla sitemizdeki yerini aldı!</span>  
+                        <p>Dergimizi okuyan, paylaşan ve sevgisiyle yanımızda olan herkese teşekkür eder, yeni cildimizin keyfini çıkarmanızı dileriz!</p>
+                    </div>
+                    <img src="https://e-tugra.com.tr/wp-content/uploads/2022/01/duyuru-1.jpg">
+                    </div>
+            </div>
+
+            <div class="item">
+                <div class="banner-item2">
+                    <div class="caption">
+                        <h1> Son eklenen içeriğimiz Anıl Yasin OĞUZ tarafından yazılan 'MOĞOLİSTAN’DAKİ TÜRK KÜLTÜR VE UYGARLIK ESERLERİNİN BUGÜNKÜ DURUMU' dergi sayımıza sayfamızın 'Son Sayılar' kısmından ulaşabilirsiniz. Keyifli Okumalar! </h1>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <div class="banner-item">
+                    <div class="caption">
+                        <span>Sevgili okurlarımız, sizlere heyecan verici bir haberimiz var! </span>  
+                        <p>15 Aralık'ta çıkacak olan yeni cildimizle birlikte, sizi daha da derinlere götürecek, sürükleyici bir içerikle karşınızda olacağız.Kaçırmayın, bize katılın ve yeni cildimizde keşfe çıkarken bize eşlik edin. 15 Aralık'ta buluşmak üzere!</p>
+                    </div>
+                    <img src="https://e-tugra.com.tr/wp-content/uploads/2022/01/duyuru-1.jpg">
+                    </div>
+            </div>
+                 
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--slider son-->
+
+
+<!-- hakkımızda başlangıç-->
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 image">
+                <img src="images/hakkımızda.jpg" class="w-100 mb-4 mb-md-0" alt="">
+            </div>
+            <div class="col-md-6 content">
+                <span>Hakkımızda</span>
+                <h3>Amaç ve Kapsam</h3>
+                <p>Doksanlı yıllarda Türk dünyasıyla ilişkilerin artmasıyla birlikte, Türkiye ile Türk Cumhuriyetleri arasında Türk dünyasının dili, sanatı ve tarihine yönelik ortak çalışmalar da artmıştır. Türk dünyasıyla ilgili benzer çalışmaların süreli bir yayın kapsamında değerlendirilmesi amacıyla da 1996 yılının Nisan ayında SEZUL Dil ve Edebiyat Dergisi yayın hayatına girmiştir.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- hakkımızda kısmı bitiş-->
+
+
+
+
+
+
+<!--makale için popup -->
+
+<section id="makaleForm" class="makale">
+    <form >
+        <h1 class="heading">Makale Formu</h1>
+        <span>Ad:</span>
+        <input type="text" id="ad" name="ad" class="box">
+      
+        <span >Soyad:</span>
+        <input type="text" id="soyad" name="soyad" class="box">
+      
+        <span>Tarih:</span>
+        <input type="date" id="tarih" name="tarih" class="box">
+      
+        <span>PDF Dosyası Yükle:</span>
+        <input type="file" id="pdfDosya" name="pdfDosya" accept=".pdf" class="box"><br>
+        <div id="hataMesajı" class="alert alert-danger" style="display: none;"></div>
+        <div id="basariMesajı" class="alert alert-success" style="display: none;"></div>
+      
+        <button type="button" onclick="submitForm()" class="btn-warning btn-lg">Formu Gönder</button>
+        
+        <button type="button" onclick="hidemakale()" class="btn btn-danger btn-lg">Kapat</button><br><br>
+        Sayın Yazarımız;<br>
+      
+        1. Pdf Dosyası olarak hazırladığınız çalışmanızı dergimizin şablonuna (Template) aktararak/yapıştırarak gönderiniz,<br>
+      
+        2. Çalışmanızın içinde isminizi yazmayınız,<br>
+      
+        3. Özetlerin en az 100-150 kelime olduğundan emin olunuz,<br>
+      
+        4. İngilizce yazılan makale taslakları dışındaki çalışmalarda İngilizce özeti eklediğinizden emin olunuz,<br>
+      
+        5. Çalışmanızı dergi yazım ilkelerine göre düzenleyiniz.<br>
+      
+      </form>
+    
+      <script>
+        function submitForm() {
+          const ad = document.getElementById('ad').value;
+          const soyad = document.getElementById('soyad').value;
+          const tarih = document.getElementById('tarih').value;
+          const pdfDosya = document.getElementById('pdfDosya').files[0];
+          const hataMesajiDiv = document.getElementById('hataMesajı');
+          const basariMesajiDiv = document.getElementById('basariMesajı');
+      
+          const formData = new FormData();
+          formData.append('ad', ad);
+          formData.append('soyad', soyad);
+          formData.append('tarih', tarih);
+          formData.append('pdfDosya', pdfDosya);
+      
+          fetch('/dosya-yukle', {
+            method: 'POST',
+            body: formData,
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.error) {
+                // Dosya yükleme hatası durumunda
+                hataMesajiDiv.innerHTML = 'Dosya yüklenirken bir hata oluştu. Lütfen tekrar deneyin.';
+                hataMesajiDiv.style.display = 'block';
+              } else {
+                // Dosya yükleme başarılı ise MongoDB'ye form verisini gönder
+                hataMesajiDiv.style.display = 'none'; // Hata mesajını gizle
+      
+                fetch('/form-gonder', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    ad,
+                    soyad,
+                    tarih,
+                    dosyaAdi: data.dosya,
+                  }),
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    // Form gönderme başarılı ise
+                    basariMesajiDiv.innerHTML = 'Form başarıyla gönderildi. Teşekkür ederiz!';
+                    basariMesajiDiv.style.display = 'block';
+                    console.log(data);
+                  })
+                  .catch(error => console.error('Form gönderme hatası:', error));
+              }
+            })
+            .catch(error => {
+              // Dosya yükleme hatası durumunda
+              hataMesajiDiv.innerHTML = 'Dosya yüklenirken bir hata oluştu. Lütfen tekrar deneyin.';
+              hataMesajiDiv.style.display = 'block';
+              console.error('Dosya yükleme hatası:', error);
+            });
+        }
+      
+      </script>
+      </section>
+    
+      <!--makale popup son -->
+    
+
+
+
+
+
+<!-- son sayılar başlangıç-->
+<section class="sonsayi" id="sonsayi">
+    <h1 class="heading">Son Sayılar</h1>
+    <div class="box-container container">
+
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -1- </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="images/2145031710_5.OnurErHakanSaritikenKursadCagriBozkirli.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a>
+            <br>
+            <button type="button" onclick="ozet1()" class="ozet-btn"> ÖZET</button> 
+        </div>
+
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -2-  </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="images/1181650445_4.YusufKomur.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet2()" class="ozet-btn"> ÖZET</button> 
+        </div>
+
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -3- </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="images/327376225_3.YusufSinanOgras.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet3()" class="ozet-btn"> ÖZET</button> 
+        </div>
+
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -4-  </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="file:///C:/Users/efsa2/OneDrive/Masa%C3%BCst%C3%BC/1201731625_6SametAta.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet()" class="ozet-btn"> ÖZET</button> 
+        </div>
+
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -5- </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="file:///C:/Users/efsa2/OneDrive/Masa%C3%BCst%C3%BC/1201731625_6SametAta.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet()" class="ozet-btn"> ÖZET</button> 
+        </div>
+
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -6-  </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="file:///C:/Users/efsa2/OneDrive/Masa%C3%BCst%C3%BC/1201731625_6SametAta.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet()" class="ozet-btn"> ÖZET</button> 
+        </div>
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -7-  </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="file:///C:/Users/efsa2/OneDrive/Masa%C3%BCst%C3%BC/1201731625_6SametAta.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet()" class="ozet-btn"> ÖZET</button> 
+        </div>
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -8-  </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="file:///C:/Users/efsa2/OneDrive/Masa%C3%BCst%C3%BC/1201731625_6SametAta.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet()" class="ozet-btn"> ÖZET</button> 
+        </div>
+        <div class="box">
+            <img src="images/wordicon.jpg" alt="icon">
+            <h3> Cilt Sayı -9-  </h3>
+            <p>Dergi Hakkında Bilgi</p>
+            <a href="file:///C:/Users/efsa2/OneDrive/Masa%C3%BCst%C3%BC/1201731625_6SametAta.pdf" title="Dergi Tam Metni"> Tam Metin (PDF)</a> <br>
+            <button type="button" onclick="ozet()" class="ozet-btn"> ÖZET</button> 
+        </div>
+    </div>
+</section>
+<!-- service section end-->
+
+<!-- yazarlar başlangıç-->
+
+<section class="yazar" id="yazar">
+
+        <table class="yazar">
+            <tr> 
+                <th colspan="3">Yazarlarımız</th>
+            </tr>
+            <tr>
+                <td>Anıl Yasin Oğuz </td>
+                <td> Mustafa Selçuk Dilsiz </td>
+                <td>Zeynep Domazetova  </td>
+            </tr>
+    
+            <tr>
+                <td>Elif Tekin  </td>
+                <td>Zeynep Aminci  </td>
+                <td>Faruk Polatcan  </td>
+            </tr>
+    
+            <tr>
+                <td>Samet Ata   </td>
+                <td>Ahmet Demirtaş    </td>
+                <td>Osman Kılıç   </td>
+            </tr>
+    
+    
+            <tr>
+                <td>Yasemin Şahin</td>
+                <td>Abdülselami Sarıgül   </td>
+                <td>Mehmet Gültekin   </td>
+            </tr>
+    
+            <tr>
+                <td>Yusuf Sinan Oğraş</td>
+                <td>Onur Er   </td>
+                <td> Hakan Sarıtiken </td>
+            </tr>
+        </table>
+    
+</section>
+
+<!-- yazarlar bitiş-->
+
+<!-- künye kısmı başlangıç -->
+<section class="etik" id="etik">
+    <div class="container">
+            <div class="content">
+                <span>Etik Değerler</span>
+                <p> 1. Kalite ve Tarafsızlık: Sunulan her içerik, kalite standartlarına uygun olmalıdır. Tarafsızlık ilkesi doğrultusunda, farklı düşünce ve bakış açılarını objektif bir şekilde ele alırız. Sitemizdeki içerikler, edebi değer ve kaliteyi ön planda tutar. <br>
+                    2. Telif Hakları ve İzinsiz Kullanım:  SEZUL Dil ve Edebiyat Dergisi, telif haklarına saygı gösterir. Sitemizde paylaşılan içeriklerin tüm hakları yazarlarına aittir. İzinsiz kullanım veya içeriğin çoğaltılması konusunda sıfır tolerans ilkesi benimseriz. <br>
+                    3. Topluluk Katılımı ve Geri Bildirim:  Ziyaretçilerimizin görüşleri bizim için değerlidir. Topluluğumuzun katılımını ve geri bildirimlerini teşvik ederiz. Ancak, herkesin saygılı bir dil kullanması ve diğer topluluk üyelerine karşı anlayışlı olması önemlidir. <br>
+                    4. Güvenlik ve Gizlilik: SEZUL Dil ve Edebiyat Dergisi, ziyaretçilerinin güvenliğine ve gizliliğine büyük önem verir. Kişisel bilgilerinizin gizliliği konusunda sağlam bir politika benimser ve bu bilgileri asla izinsiz kişilerle paylaşmaz. <br>
+                    Bu etik sorumluluklar, SEZUL Dil ve Edebiyat Dergisi topluluğu için bir rehber niteliğindedir. Sitemizi ziyaret eden herkesin bu kurallara saygı göstermesini bekleriz. Unutmayın ki,  SEZUL Dil ve Edebiyat Dergisi, edebiyatın gücüyle bir araya gelmiş bir topluluktur ve bu topluluğun bir parçası olmaktan gurur duyuyoruz. <br>
+                      Sevgi ve edebi birikimle dolu günler dileriz.
+                </p>
+            </div>
+    
+    </div>
+</section>
+
+<!-- künye kısmı son -->
+
+<section id=uye style="background-color: #e9eeee;">
+
+    <ul id="uye-listesi"></ul>
+    <script>
+        console.log("1");
+        // Üyeleri çekmek için JavaScript kodu 
+       // Üye listesini güncelleyen fonksiyon
+function refreshUserList() {
+    fetch('/members')
+        .then(response => response.json())
+        .then(uyeler => {
+            const uyeListesi = document.getElementById('uye-listesi');
+            uyeListesi.innerHTML = ''; // Önceki listeyi temizle
+            uyeler.forEach(user => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div>
+                        <p>AD VE SOYAD: ${user.name}</p>
+                        <p>E-MAİL: ${user.email}</p>
+                        <button onclick="silUser('${user._id}', this)" class="btn btn-danger btn-lg" >Sil</button>
+                        <button  onclick="guncelleUser('${user._id}')" class="guncelle" >Güncelle</button>
+                        <br>
+                        <br>
+                    </div>
+                `;
+                uyeListesi.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Üyeler getirilemedi:', error));
+}
+
+
+// Bu fonksiyonu üye kaydı yapıldığında çağırabilirsiniz.
+
+
+        function guncelleUser(userId) {
+            const yeniAd = prompt('Yeni adınızı girin:');
+            const yeniEmail = prompt('Yeni e-mailinizi girin:');
+
+            if (yeniAd && yeniEmail) {
+                fetch('/updateUser/' + userId, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: yeniAd,
+                        email: yeniEmail,
+                    }),
+                })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Üye başarıyla güncellendi.');
+                // Güncellenen veriyi direkt olarak HTML üzerinde güncelle
+                const userElement = document.querySelector('.uye-listesi [data-user-id="${userId}"]');
+                if (userElement) {
+                    userElement.innerHTML = `
+                        <div>
+                            <p>AD VE SOYAD: ${yeniAd}</p>
+                            <p>E-MAİL: ${yeniEmail}</p>
+                            <button onclick="silUser('${userId}', this)" class="btn btn-danger btn-lg" >Sil</button>
+                            <button  onclick="guncelleUser('${userId}')" class="guncelle" >Güncelle</button>
+                            <br>
+                            <br>
+                        </div>
+                    `;
+                }
+            } else {
+                alert('Üye güncellenemedi.');
+            }
+        })
+        .catch(error => console.error('Üye güncellenemedi:', error));
+       } 
+       else {
+        alert('Lütfen geçerli bir ad ve e-mail girin.');
+            }
+        }
+        
+        function silUser(userId, button) {
+            fetch('/deleteUser/' + userId, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Üye başarıyla silindi.');
+                        // Silinen üyenin olduğu <li> elemanını kaldır
+                        const listItem = button.closest('li');
+                        listItem.parentNode.removeChild(listItem);
+                    } else {
+                        alert('Üye silinemedi.');
+                    }
+                })
+                .catch(error => console.error('Üye silinemedi:', error));
+        }
+    </script>
+    <button type="button" onclick="hideuye()" class="btn btn-danger btn-lg">Kapat</button>
+</section>
+
+
+
+<!--footer başlangıç-->
+
+<section class="footer" id="footer">
+
+        <h1 class="heading">İLETİŞİM BİLGİLERİ</h1>
+
+        <div class="box-container container">
+        <div class="box">
+            <h3>Telefon</h3>
+            <i class="fas fa-phone"></i>
+            <p>05555555555</p>
+            <p>05555555555</p>
+        </div>
+
+        <div class="box">
+            <h3>Adres</h3>
+            <i class="fas fa-map-marker-alt"></i>
+            <p>İstanbul Topkapı Üniversitesi Altunizade Kampüsü Üsküdar/İstanbul</p>
+        </div>
+
+        <div class="box">
+            <h3>E-posta</h3>
+            <i class="fas fa-envelop"></i>
+            <p>efsasezer@topkapi.edu.tr</p>
+            <p>asumanulusoy@topkapi.edu.tr</p>
+        </div>
+    </div>
+</section>
+
+<!--footer bitiş -->
+
+
+<section id="ozet1" class="ozet1">
+    <h1 class="heading">ÖZET</h1>
+    <p>TÜRK DİLİ VE EDEBİYATI BÖLÜMÜ ÖĞRENCİLERİNİN KUTADGU BİLİG’İ ANLAMA DURUMLARININ DEĞERLENDİRİLMESİ
+        Bu araştırmanın amacı Türk Dili ve Edebiyatı Bölümü öğrencilerinin Kutadgu Bilig’i anlama durumlarını değerlendirmektir. Araştırma kapsamında Türkiye’de bir devlet üniversitesinde dördüncü sınıfta öğrenim gören 20 Türk Dili ve Edebiyatı Bölümü öğrencisine 15 Kutadgu Bilig beytinin bulunduğu Yazılı Soru Formu uygulanmıştır ve içerik analizi yapılarak yazılı sorulara verilen yanıtlar incelenmiştir.Araştırma sonucunda eski Türk eserlerine ilgi duyan ve duymayan Türk Dili ve Edebiyatı Bölümü dördüncü sınıf öğrencilerinin çoğu 15 Kutadgu Bilig beytini ya yanlış anlamıştır ya da anlamlarını bilmediğini ifade etmiştir. 
+        Lisansüstü eğitim yapmayı düşünen ve düşünmeyen öğrenciler ve genel ağırlıklı not ortalaması 3.00 ve üzeri ile 3.00’ün altında olan öğrencilerin de çoğu 15 Kutadgu Bilig beytini ya yanlış anlamıştır ya da anlamlarını bilmediğini ifade etmiştir. Yazılı Soru Formunda bulunan 15 Kutadgu Bilig beytini doğru anlayan öğrenci bulunmamaktadır.<br>Anahtar Kelimeler<br>Türk dili ve edebiyatı, Karahanlı Türkçesi, Kutadgu Bilig, anlama, nitel araştırma</p>
+        <button type="button" onclick="ozetkapama1()" class="btn btn-danger btn-lg">Kapat</button>
+</section>
+<section id="ozet2" class="ozet1">
+    <h1 class="heading">ÖZET</h1>
+    <p>ÖMER SEYFETTİN’İN HİKÂYELERİNDEKİ RÜYAYA PSİKANALİTİK BİR BAKIŞ
+        Sigmund Freud tarafından geliştirilen psikanaliz, insan davranışlarının kaynağını belirleme amacıyla hareket eden bir bilim alanıdır. Psikanaliz, insanın ruhsal durumunu anlamaya ve açıklamaya çalışırken bilinçaltı ve bilinçdışı gibi süreçlere başvurarak onun içsel çatışma ve güdülerini araştırıp onun davranış bozukluklarının sebeplerini ortaya koymayı amaçlar. Nasıl ki psikanaliz ile insan davranışlarının anlaşılmasına yönelik çözümlemeler yapılıyorsa edebî eseri de aynı şekilde “irdeleyerek” eserin şahıs kadrosu ve bu kişilerin başlarından geçen olayların psikolojik boyutu ortaya konulabilir. Bu çalışmada Freud’un geliştirdiği ve pek çok ismin yaptığı çalışmalarla daha ileri noktalara taşıdığı psikanalitik bakış açısıyla Ömer Seyfettin’in hikâyelerindeki rüyaların çözümlenmesi hedeflenmiştir.<br>Anahtar Kelimeler<br>Ömer Seyfettin, psikoloji, psikanaliz, rüya, hikâye</p>
+        <button type="button" onclick="ozetkapama2()" class="btn btn-danger btn-lg">Kapat</button>
+</section>
+<section id="ozet3" class="ozet1">
+    <h1 class="heading">ÖZET</h1>
+    <p>ÖMER SEYFETTİN’İN ESERLERİNDE OSMANLICILIK FİKRİNİN ELEŞTİRİSİ
+        Ömer Seyfettin, Osmanlı Devleti’nin son dönemlerinde yaşamış, Türk edebiyatında derin izler bırakmış yazarlarımızdandır. Özellikle Türkçülük akımının oluşmasında ve gelişmesinde önemli yeri olan sanatçı, Cumhuriyet Dönemi Türk Edebiyatı’nın şekillenmesinde de mühim işler başarır. Genç Kalemler dergisinde Türkçe ile ilgili yapılmasını arzu ettiği şeyler, Cumhuriyet ile vücuda gelir. Sanatçı kimliğinin yanı sıra önemli bir Türk aydını kabul edilen yazar, yaşadığı dönemin sorunlarıyla ilgilenir, bunlara çözümler arar. Osmanlı Devleti’nin içinde bulunduğu vaziyetten kurtulmasının yolunun Türkçülük fikri etrafında birleşmek olduğunu savunan sanatçı, özellikle Osmanlıcılık fikir hareketine sert biçimde cephe alır. Bu durum sanatkârın bazı hikâyelerinde ve makalelerinde açıkça görülür. Çalışmada yazarın makaleleri ve hikâyeleri içerisinde sadece Osmanlıcılık fikrini ve bu ideolojinin eleştirisini ihtiva eden metinler üzerinde durulacaktır. Bu bağlamda “Ashab-ı Kehfimiz” ve “Hürriyet Bayrakları” adlı öyküler, Osmanlı Devleti’nin resmî ideolojisi sayılabilecek Osmanlıcılığın iflasının anlatıldığı iki önemli eser olarak karşımıza çıkar.<br>Anahtar Kelimeler<br>Ömer Seyfettin, hikâye, Osmanlıcılık, eleştiri, makale</p>
+        <button type="button" onclick="ozetkapama3()" class="btn btn-danger btn-lg">Kapat</button>
+</section>
+
+<!-- slider için-->
+<script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+<script src="js/owl/dist/owl.carousel.min.js"></script>
+<script  src="custom.js"> </script>
+
+</body>
+
+</html>

@@ -1,0 +1,530 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+:root {
+  --light-color: #eee;
+  --light-bg: #eee;
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0.1);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none !important;
+
+}
+
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: brown;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth; /* Sayfa üzerindeki tüm kaydırmaları animasyonlu hale getir */
+}
+
+
+
+section {
+  padding: 7rem 2rem;
+}
+
+
+
+/* section başlıkları */
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+}
+
+/* üyelik butonu kısmı */ 
+.link-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  background-color: brown;
+  cursor: pointer;
+  font-size: 1.7rem;
+  color: white;
+}
+
+
+.link-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/*header başlangıç */
+
+.header {
+  padding: 2rem;
+  border-bottom: var(--border);
+  position: fixed;
+  transition: background-color 2s ease;
+}
+.header.transparent {
+  background-color: rgba(255, 255, 255, 0); /* Başlangıçta tamamen saydam arka plan rengi */
+}
+
+.header.opaque {
+  background-color: rgba(255, 255, 255, 1); /* Scroll yapıldığında tamamen opak arka plan rengi */
+}
+
+
+.header .logo {
+  font-size: 4rem;
+  color: black;
+
+}
+
+.header .logo span {
+  color: brown;
+}
+
+.header .nav a {
+  margin: 0 1.1rem;
+  font-size: 1.7rem;
+  color: black;
+}
+
+.header .nav a:hover {
+  color: brown;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 2rem;
+  }
+  html {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 1rem;
+  }
+  html {
+    width: 100%;
+  }
+}
+
+
+.home {
+  background:url(images/anaekran.jpg) no-repeat;
+  background-size: cover; /*ekranın tamamının kaplamasını sağlar */
+  background-position: center;
+  opacity: 0.9;
+}
+
+.home .content {
+  width: 50rem;
+}
+
+.home .content h3 {
+  font-size: 3rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.home .content p {
+  line-height: 2;
+  font-size: 1.5rem;
+  color: black;
+  padding: 1rem 0;
+}
+
+/* hakkımızda*/
+
+.about .row {
+  min-height: 50vh;
+}
+
+/* hakkımızda başlığı düzenleme */
+.about .content span {
+  font-size: 4rem;
+  color: brown;
+}
+
+
+.about .content h3 {
+  font-size: 3rem;
+  color: black;
+  margin-top: 1rem;
+}
+
+.about .content p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: black;
+  line-height: 2;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about .about-content {
+  min-height: 50vh;
+}
+
+.sonsayi {
+  background-color: var(--light);
+}
+
+.sonsayi .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /*sütunların minimum genişliğini 30rem olarak ve maksimum genişliğini 1fr olarak belirler.  */
+  gap: 2rem; /* ögeler arasındaki boşluğu düzenler */
+}
+/* kutuların içeriğini düzenleme */
+.sonsayi .box-container .box {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+     /*köşelerin yuvarlaklığını ayarladık */
+}
+
+
+.sonsayi .box-container .box img {
+  margin: 1rem 0;
+  height: 5rem;
+}
+
+.sonsayi .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: black;
+}
+.sonsayi .box-container .box p {
+  font-size: 1.5rem;
+  color: black;
+  line-height: 2;
+}
+.sonsayi .box-container .box a{
+  font-size: 1.5rem;
+}
+
+.yazar {
+  width: 80%;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.yazar th {
+  text-align: center;
+  background-color: brown;
+  color: white;
+  padding: 2rem;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.yazar td {
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid black;
+  font-size: 2rem;
+  color:black;
+}
+ 
+.yazar tr td:hover {
+  background-color:rgb(174, 44, 44,0.3);
+}
+
+/* üyelik formu düzenlemesi */
+.contact form {
+  border-radius: 0.5rem;
+  background-color: var(--light-bg);
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 50rem;
+}
+
+.contact form .box {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.7rem;
+  color: black;
+}
+
+.contact form span {
+  font-size: 1.7rem;
+  color: black;
+}
+
+#guncelleme
+{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+button.guncelle {
+  background-color: #ff8c00;
+  color: white;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+button.guncelle:hover {
+  background-color: #ffaa00;}
+  
+#uye-listesi
+{
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.5rem;
+  color: black;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+#uye{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.ozet1{
+  font-size: 700px;
+}
+#ozet1 , #ozet2 , #ozet3{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  font-size: 15px;
+}
+
+.ozet-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: white;
+  font-size: 1.3rem;
+  color: blue;
+}
+
+
+
+.footer {
+  background-color: #eee;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+.footer .box-container .box {
+  text-align: center;
+}
+.footer .box-container i {
+  height: 5rem;
+  width: 5rem;
+  font-size: 2rem;
+  background-color: brown;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.footer .box-container .box p {
+  font-size: 1.5rem;
+  color:black;
+  line-height: 2;
+}
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: black;
+}
+
+
+.slider .banner-item {
+  display: flex;
+  font-size: 2rem;
+  line-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider .caption span{
+  font-size: 3rem;
+  line-height: 40px;
+  color: brown;
+  display: inline-block;
+  animation: marquee 10s linear;
+  position: relative;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.slider .banner-item img {
+  width:350px !important;
+}
+
+.slider .banner-item .caption {
+  width: 60%;
+}
+
+.slider .banner-item2 h1{
+  line-height: 40px;
+  text-align: center;
+  margin-top: 10%;
+}
+
+
+/* künye başlığı düzenleme */
+.etik .content span {
+  font-size: 4rem;
+  color: brown;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+
+.etik .content h3 {
+  font-size: 3rem;
+  color: black;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.etik .content p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: black;
+  line-height: 2;
+}
+
+.etik-content {
+  display: flex;
+  text-align: center;
+}
+
+.etik .etik-content {
+  min-height: 50vh;
+}
+
+#makaleForm{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index:99999;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.makale  form {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 50rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.makale form .box {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--light-bg);
+  padding: 1.2rem 1.4rem;
+  font-size: 1.7rem;
+  color: black;
+}
+
+.makale form span {
+  font-size: 1.7rem;
+ color: black;
+}
